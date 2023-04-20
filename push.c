@@ -38,7 +38,6 @@ void    push(number)
                 pb;
                 len_stack_a--;
             }
-
             else
             {
                 ra;
