@@ -11,3 +11,20 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+#i = digit
+
+while (len_stack_a > 0)
+{
+    if (i == 0)
+        pb
+
+    else
+        ra
+    len_stack_a--;
+}
+while (len_stack_b > 0)
+{
+    pa
+    len_stack_b--;
+}

@@ -15,12 +15,10 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "./libft/libft.h"
 
-//typedef means we dont have to write struct every time in our code
-//look clean, readable, portable and manageable
+//typedef means we dont have to write struct every time in our code, clean code
 
-typedef struct stack
+typedef struct stacks
 {
 	int	*stack_a;
 	int	*stack_b;
