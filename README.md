@@ -1,2 +1,2 @@
 # push_swap
-Sorting numbers with radix algorithm, base 2 (binary). I used arrays and 2 stacks.
+Sorting numbers with Radix algorithm, Base 2 (Binary). I used Arrays and 2 Stacks.
