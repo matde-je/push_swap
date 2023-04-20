@@ -12,19 +12,44 @@
 
 #include "push_swap.h"
 
-#i = digit
-
-while (len_stack_a > 0)
+void    push(number)
 {
+    int i;
+
+    i = number % 10;
     if (i == 0)
-        pb
-
+    {
+        pb;
+        len_stack_a--;
+    }
     else
-        ra
-    len_stack_a--;
-}
-while (len_stack_b > 0)
-{
-    pa
-    len_stack_b--;
+    {
+        ra;
+        len_stack_a++;
+    }
+    i = number;
+    while (i)
+    {
+        i = (i / 10) % 10;
+        while (len_stack_a > 0)
+        {
+            if (i == 0)
+            {
+                pb;
+                len_stack_a--;
+            }
+
+            else
+            {
+                ra;
+                len_stack_a++;
+            }
+        }
+        while (len_stack_b > 0)
+        {
+            pa;
+            len_stack_b--;
+        }
+        
+    }
 }

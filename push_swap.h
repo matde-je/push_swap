@@ -22,8 +22,8 @@ typedef struct stacks
 {
 	int	*stack_a;
 	int	*stack_b;
-	int	a_len;
-	int	b_len;
+	int	len_stack_a;
+	int	len_stack_b;
 }t_stack;
 
 #endif
