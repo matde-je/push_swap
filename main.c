@@ -14,6 +14,8 @@
 
 int	main(int argc, char **argv)
 {
+	t_stack	a;
+	t_stack	b;
 	int	i;
 	int	temp[argc - 1];
 
@@ -22,4 +24,10 @@ int	main(int argc, char **argv)
 	{
 		temp[i - 1] = ft_atoi(argv[i]);
 	}
+	if (a.size == 3)
+		numbers_3(&a, &b);
+	else if (a.size == 5)
+		numbers_5(&a, &b);
+	free(a.array);
+	free(b.array);
 }

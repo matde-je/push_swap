@@ -12,11 +12,12 @@
 
 SOURCES =	main.c
 			radix.c
-			reverse_rotate.c
 			rotate.c
-			set_struct.c
-			swap.c
-			push.c
+			numbers_3.c
+			numbers_5.c
+			push_a.c
+			push_b.c
+			movements.c
 			ft_atoi.c
 
 

@@ -12,44 +12,50 @@
 
 #include "push_swap.h"
 
-void    push(number)
+void	movements(void)
 {
-    int i;
+    int	digit;
+    t_stack	b;
+    t_stack a;
+	int	size_a;
+	int	count;
 
-    i = number % 10;
-    if (i == 0)
+	size_a = a.size;
+	count = 0;
+    digit = a.array[0] % 10;
+	while (size_a > 0)
+	{
+		if (digit == 0)
+		{
+			push_b(a.array[count]);
+			a.size--;
+		}
+		else
+		{
+			rotate_a(a.array[count]);
+			a.size++;
+		}
+		size_a--;
+		count++;
+	}
+    digit = a.array[count];
+    while (a.size > 0)
     {
-        pb;
-        len_stack_a--;
-    }
-    else
-    {
-        ra;
-        len_stack_a++;
-    }
-    i = number;
-    while (i)
-    {
-        i = (i / 10) % 10;
-        while (len_stack_a > 0)
+        digit = (digit / 10) % 10;
+        if (digit == 0)
         {
-            if (i == 0)
-            {
-                pb;
-                len_stack_a--;
-            }
-
-            else
-            {
-                ra;
-                len_stack_a++;
-            }
+            push_b(a.array[count]);
+            a.size--;
         }
-        while (len_stack_b > 0)
+        else
         {
-            pa;
-            len_stack_b--;
+            rotate_a(a.array[count]);
+            a.size++;
         }
-        
+    }
+    while (b.size > 0)
+    {
+        push_a(a.array[count]);
+        b.size--;
     }
 }

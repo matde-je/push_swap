@@ -16,14 +16,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-//typedef means we dont have to write struct every time in our code, clean code
-
-typedef struct stacks
+typedef struct stack
 {
-	int	*stack_a;
-	int	*stack_b;
-	int	len_stack_a;
-	int	len_stack_b;
+	int	*array;
+	int	size;
 }t_stack;
 
 #endif

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void    rotate()
+void    rotate_a(void)
 {
 
 }
