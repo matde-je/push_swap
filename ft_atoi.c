@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.i                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,26 +12,26 @@
 
 int	ft_atoi(const char *str)
 {
-	int	c;
-	int	s;
+	int	i;
+	int	sign;
 	int	res;
 
-	c = 0;
-	s = 1;
+	i = 0;
+	sign = 1;
 	res = 0;
-	while (str[c] == ' ' || str[c] == '\n' || str[c] == '\t'
-		|| str[c] == '\v' || str[c] == '\f' || str[c] == '\r')
-		c++;
-	if (str[c] == '-' || str[c] == '+')
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[c] == '-')
-			s = -1;
-		c++;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	while (str[c] >= '0' && str[c] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (res * 10) + (str[c] - '0');
-		c++;
+		res = (res * 10) + (str[i] - '0');
+		i++;
 	}
-	return (res * s);
+	return (res * sign);
 }
