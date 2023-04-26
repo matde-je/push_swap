@@ -14,8 +14,6 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	a;
-	t_stack	b; 
 	int	i;
 	int	count;
 	int	temp[argc - 1];
@@ -32,25 +30,23 @@ int	main(int argc, char **argv)
 	{
 		temp[i - 1] = my_atoi(argv[i]);
 	}
-	a.array = argv;
+	stack_a()->array = **argv;
 	count = 0;
-	while (count < a.size)
+	while (count < stack_a()->size)
 	{
-		if (a.array[count] < 0)
-			negative_number(&a);
+		if (stack_a()->array[count] < 0)
+			negative_number();
 		count++;
 	}
-	a = bit_shift(&a);
-	if (a.size == 1)
-		return (a.array[0]);
-	else if (a.size == 2)
-		rotate_a(&a, a.array[0]);
-	else if (a.size == 3)
-		numbers_3(&a);
-	else if (a.size == 5)
-		numbers_5(&a);
+	bit_shift();
+	if (stack_a()->size == 1)
+		return (stack_a()->array);
+	else if (stack_a()->size == 2)
+		rotate_a();
+	else if (stack_a()->size == 3)
+		numbers_3();
+	else if (stack_a()->size == 5)
+		numbers_5();
 	else
-		movements(&a, &b);
-	free(a.array);
-	free(b.array);
+		movements();
 }

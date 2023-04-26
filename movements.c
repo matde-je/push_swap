@@ -12,28 +12,24 @@
 
 #include "push_swap.h"
 
-void	movements(t_stack *a, t_stack *b)
+void	movements(void)
 {
     int	digit;
-    t_stack	sb;
-    t_stack sa;
 	int	count;
 
-    sa = *a;
-    sb = *b;
 	count = 0;
-    digit = sa.array[0] % 10;
-	while (sa.size > 0)
+    digit = stack_a()->array[0] % 10;
+	while (stack_a()->size > 0)
 	{
 		if (digit == 0)
 		{
-			sa, sb = push_b(&sa, &sb, sa.array[count]);
-			sa.size--;
+			push_b(stack_a()->array[count]);
+			stack_a()->size--;
 		}
 		else
 		{
-			sa = rotate_a(&sa, sa.array[count]);
-			sa.size++;
+			rotate_a(stack_a()->array[count]);
+			stack_a()->size++;
 		}
 		count++;
 	}

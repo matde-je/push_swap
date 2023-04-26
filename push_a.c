@@ -16,11 +16,11 @@ void push_a(int value)
 {
     int count;
     count = 0;
-    while (a.size > 0)
+    while (stack_a()->size > 0)
     {
-        a.array[a.size] = b.array[count];
-        b.size--;
-        a.size++;
+        stack_a()->array[stack_a()->size] = stack_b()->array[count];
+        stack_b()->size--;
+        stack_a()->size++;
         count++;
     }
 }

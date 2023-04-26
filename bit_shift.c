@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack bit_shift(t_stack *a) 
+t_stack bit_shift(void) 
 {
     t_stack sa;
 	int	count;

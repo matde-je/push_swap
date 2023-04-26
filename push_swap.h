@@ -31,8 +31,8 @@ void	numbers_3();
 void	numbers_5();
 void	rotate_a(int value);
 void	negative_numbers();
-void	stack_a(void)
-t_stack stack_b(void)
-t_stack stack_temp(void)
+t_stack	*stack_a(void);
+t_stack *stack_b(void);
+t_stack *stack_temp(void);
 
 #endif

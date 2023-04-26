@@ -12,20 +12,20 @@
 
 #include "push_swap.h"
 
-t_stack stack_a(void)
+t_stack *stack_a(void)
 {
-    static  t_stack a;
-    return a;
+    static  t_stack *a;
+    return &a;
 }
 
-t_stack	stack_b(void)
+t_stack	*stack_b(void)
 {
-    static  t_stack b;
-    return b;
+    static  t_stack *b;
+    return &b;
 }
 
-t_stack	stack_temp(void)
+t_stack	*stack_temp(void)
 {
-    static  t_stack temp;
-    return temp;
+    static  t_stack *temp;
+    return &temp;
 }

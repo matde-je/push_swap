@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack	negative_numbers(t_stack *a)
+t_stack	negative_numbers()
 {
 	t_stack    sa;
 

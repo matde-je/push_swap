@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack push_b(t_stack *a, t_stack *b, int value)
+t_stack push_b(int value)
 {
     t_stack sa;
 	t_stack sb;
