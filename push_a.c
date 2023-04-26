@@ -12,8 +12,15 @@
 
 #include "push_swap.h"
 
-void push_a(void)
+void push_a(int value)
 {
-    t_stack a;
-    
+    int count;
+    count = 0;
+    while (a.size > 0)
+    {
+        a.array[a.size] = b.array[count];
+        b.size--;
+        a.size++;
+        count++;
+    }
 }

@@ -12,7 +12,17 @@
 
 #include "push_swap.h"
 
-void push_b(void)
+t_stack push_b(t_stack *a, t_stack *b, int value)
 {
-    
+    t_stack sa;
+	t_stack sb;
+
+	sb = *b;
+	sa = *a;
+	sb.array[sb.size] = value;
+	sb.size++;
+	sa.size--;
+	*a = sa;
+	*b = sb;
+	return (*a, *b);  
 }

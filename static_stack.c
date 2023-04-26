@@ -1,18 +1,31 @@
-/* ************************************************************************** */
 /*                                                                            */
+/* ************************************************************************** */
 /*                                                        :::      ::::::::   */
-/*   numbers_5.c                                        :+:      :+:    :+:   */
+/*   static_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 12:39:15 by matde-je          #+#    #+#             */
-/*   Updated: 2023/04/19 14:50:48 by matde-je         ###   ########.fr       */
+/*   Created: 2022/09/14 14:34:48 by marvin            #+#    #+#             */
+/*   Updated: 2022/10/25 18:46:27 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	numbers_5(void *a)
+t_stack stack_a(void)
 {
+    static  t_stack a;
+    return a;
+}
 
+t_stack	stack_b(void)
+{
+    static  t_stack b;
+    return b;
+}
+
+t_stack	stack_temp(void)
+{
+    static  t_stack temp;
+    return temp;
 }

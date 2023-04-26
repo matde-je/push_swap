@@ -11,15 +11,16 @@
 # **************************************************************************** #
 
 SOURCES =	main.c
-			radix.c
-			rotate.c
+			rotate_a.c
 			numbers_3.c
 			numbers_5.c
 			push_a.c
 			push_b.c
 			movements.c
-			ft_atoi.c
-
+			my_atoi.c
+			bit_shift.c
+			static_stack.c
+			negative_numbers.c
 
 NAME 	=	push_swap.a
 OBJECTS	=	$(SOURCES:.c=.o)

@@ -12,50 +12,51 @@
 
 #include "push_swap.h"
 
-void	movements(void)
+void	movements(t_stack *a, t_stack *b)
 {
     int	digit;
-    t_stack	b;
-    t_stack a;
-	int	size_a;
+    t_stack	sb;
+    t_stack sa;
 	int	count;
 
-	size_a = a.size;
+    sa = *a;
+    sb = *b;
 	count = 0;
-    digit = a.array[0] % 10;
-	while (size_a > 0)
+    digit = sa.array[0] % 10;
+	while (sa.size > 0)
 	{
 		if (digit == 0)
 		{
-			push_b(a.array[count]);
-			a.size--;
+			sa, sb = push_b(&sa, &sb, sa.array[count]);
+			sa.size--;
 		}
 		else
 		{
-			rotate_a(a.array[count]);
-			a.size++;
+			sa = rotate_a(&sa, sa.array[count]);
+			sa.size++;
 		}
-		size_a--;
 		count++;
 	}
-    digit = a.array[count];
-    while (a.size > 0)
+    digit = sa.array[count];
+    while (sa.size > 0)
     {
         digit = (digit / 10) % 10;
         if (digit == 0)
         {
-            push_b(a.array[count]);
-            a.size--;
+            sb = push_b(&sa, &sb, sa.array[count]);
+            sa.size--;
         }
         else
         {
-            rotate_a(a.array[count]);
-            a.size++;
+            sa = rotate_a(&sa, sa.array[count]);
+            sa.size++;
         }
     }
-    while (b.size > 0)
+    while (sb.size > 0)
     {
-        push_a(a.array[count]);
-        b.size--;
+        push_a(&sb, &sa, sa.array[count]);
+        sb.size--;
     }
+    *a = sa;
+    *b = sb;
 }

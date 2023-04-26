@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers_5.c                                        :+:      :+:    :+:   */
+/*   negative_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,12 @@
 
 #include "push_swap.h"
 
-void	numbers_5(void *a)
+t_stack	negative_numbers(t_stack *a)
 {
+	t_stack    sa;
 
+	sa = *a;
+
+	*a = sa;
+	return (*a);
 }
