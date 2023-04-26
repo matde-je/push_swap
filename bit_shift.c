@@ -12,24 +12,19 @@
 
 #include "push_swap.h"
 
-t_stack bit_shift(void) 
+void bit_shift(void) 
 {
-    t_stack sa;
 	int	count;
-	t_stack binary_num;
 
-    sa = *a;
 	count = 0;
-	while (count < sa.size)
+	while (count < stack_a()->size)
 	{
-		while (sa.array[count] > 0)
+		while (stack_a()->array[count] > 0)
 		{
-			binary_num.array[count] = sa.array[count] % 2;
-			sa.array[count] /= 2;
+			stack_temp()->array[count] = stack_a()->array[count] % 2;
+			stack_a()->array[count] /= 2;
 		}
 		count++;
 	}
-	sa = binary_num;
-	*a = sa;
-	return (*a);
+	stack_a()->array = stack_temp()->array;
 }

@@ -28,31 +28,25 @@ void	movements(void)
 		}
 		else
 		{
-			rotate_a(stack_a()->array[count]);
+			rotate_a();
 			stack_a()->size++;
 		}
 		count++;
 	}
-    digit = sa.array[count];
-    while (sa.size > 0)
+    digit = stack_a()->array[count];
+    while (stack_a()->size > 0)
     {
         digit = (digit / 10) % 10;
         if (digit == 0)
         {
-            sb = push_b(&sa, &sb, sa.array[count]);
-            sa.size--;
+            push_b(stack_a()->array[count]);
+            stack_a()->size--;
         }
         else
         {
-            sa = rotate_a(&sa, sa.array[count]);
-            sa.size++;
+            rotate_a();
+            stack_a()->size++;
         }
     }
-    while (sb.size > 0)
-    {
-        push_a(&sb, &sa, sa.array[count]);
-        sb.size--;
-    }
-    *a = sa;
-    *b = sb;
+    push_a();
 }

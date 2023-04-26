@@ -16,7 +16,6 @@ int	main(int argc, char **argv)
 {
 	int	i;
 	int	count;
-	int	temp[argc - 1];
 
 	if (*argv == NULL)
 		return (0);
@@ -25,12 +24,12 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (0);
 	}
-	i = 0;
+	i = -1;
 	while (++i != argc)
 	{
-		temp[i - 1] = my_atoi(argv[i]);
+		stack_temp()->array[i] = my_atoi(argv[i]);
 	}
-	stack_a()->array = **argv;
+	stack_a()->array = stack_temp()->array;
 	count = 0;
 	while (count < stack_a()->size)
 	{
@@ -41,7 +40,7 @@ int	main(int argc, char **argv)
 	bit_shift();
 	if (stack_a()->size == 1)
 		return (stack_a()->array);
-	else if (stack_a()->size == 2)
+	else if (stack_a()->size == 2 && stack_a()->array[0] > stack_a()->array[1])
 		rotate_a();
 	else if (stack_a()->size == 3)
 		numbers_3();

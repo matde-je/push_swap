@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void numbers_3(void)
+void    numbers_3(void)
 {
 
 }

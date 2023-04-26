@@ -22,15 +22,15 @@ typedef struct stack
 	int	size;
 }t_stack;
 
-void	bit_shift();
-void	movements();
+void	bit_shift(void);
+void	movements(void);
 int	my_atoi(char *str);
 void	push_b(int value);
-void	push_a(int value);
-void	numbers_3();
-void	numbers_5();
-void	rotate_a(int value);
-void	negative_numbers();
+void	push_a(void);
+void	numbers_3(void);
+void	numbers_5(void);
+void	rotate_a(void);
+void	negative_numbers(void);
 t_stack	*stack_a(void);
 t_stack *stack_b(void);
 t_stack *stack_temp(void);

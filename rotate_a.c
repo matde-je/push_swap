@@ -12,11 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack rotate_a(int value)
+void    rotate_a(void)
 {
-    t_stack sa;
-
-    sa = *a;
-    *a = sa;
-    return (*a);
+    
 }

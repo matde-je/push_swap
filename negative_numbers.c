@@ -12,12 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack	negative_numbers()
+void	negative_numbers(void)
 {
-	t_stack    sa;
 
-	sa = *a;
-
-	*a = sa;
-	return (*a);
 }
