@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:42:23 by matde-je          #+#    #+#             */
-/*   Updated: 2023/04/19 14:55:09 by matde-je         ###   ########.fr       */
+/*   Updated: 2023/04/27 18:18:09 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	main(int argc, char **argv)
 	int	i;
 	int	count;
 
-	if (*argv == NULL)
-		return (0);
 	if (argc <= 1)
 	{
 		write(1, "Error\n", 6);
@@ -34,12 +32,12 @@ int	main(int argc, char **argv)
 	while (count < stack_a()->size)
 	{
 		if (stack_a()->array[count] < 0)
-			negative_number();
+			negative_numbers();
 		count++;
 	}
 	bit_shift();
 	if (stack_a()->size == 1)
-		return (stack_a()->array);
+		return (my_atoi(argv[0]));
 	else if (stack_a()->size == 2 && stack_a()->array[0] > stack_a()->array[1])
 		rotate_a();
 	else if (stack_a()->size == 3)
