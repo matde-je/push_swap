@@ -15,35 +15,22 @@
 int	main(int argc, char **argv)
 {
 	int	i;
-	int	count;
 
 	if (argc <= 1)
-	{
 		write(1, "Error\n", 6);
-		return (0);
-	}
 	i = -1;
 	while (++i != argc)
-	{
-		stack_temp()->array[i] = my_atoi(argv[i]);
-	}
-	stack_a()->array = stack_temp()->array;
-	count = 0;
-	while (count < stack_a()->size)
-	{
-		if (stack_a()->array[count] < 0)
-			negative_numbers();
-		count++;
-	}
-	bit_shift();
-	if (stack_a()->size == 1)
-		return (my_atoi(argv[0]));
-	else if (stack_a()->size == 2 && stack_a()->array[0] > stack_a()->array[1])
+		stack_temp()->array[i] = my_atoi(argv[i + 1]);
+	index_();
+	if (stack_a()->size == 2 && stack_a()->array[0] > stack_a()->array[1])
 		rotate_a();
-	else if (stack_a()->size == 3)
+	else if (stack_a()->size == 2)
+		write(1, "Already sorted\n", 15);
+	if (stack_a()->size == 3)
 		numbers_3();
-	else if (stack_a()->size == 5)
+	if (stack_a()->size == 5)
 		numbers_5();
 	else
-		movements();
+		radix();
+	return (0);
 }

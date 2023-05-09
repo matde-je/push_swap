@@ -14,5 +14,13 @@
 
 void	numbers_5(void)
 {
-
+    push_b(stack_a()->array[stack_a()->size -1]);
+    push_b(stack_a()->array[stack_a()->size -2]);
+    numbers_3();
+    while (stack_a()->size > 0)
+    {
+        if (stack_b()->array[stack_a()->size -1] < stack_a()->array[stack_a()->size -1])
+            push_a();
+        stack_a()->size--;
+    }
 }

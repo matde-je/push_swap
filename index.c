@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,29 +12,36 @@
 
 #include "push_swap.h"
 
-void	radix(void)
+void    index_(void)
 {
-	int		count;
-	int		count_2;
-    int		max_bits;
-	int		max_num;
+	int	max;
+	int	len;
+	int count;
 
-	max_num = stack_a()->size;
-	max_bits = 0;
-	while (max_num >> max_bits != 0)
-		max_bits++;
-	count = -1;
-	while (++count < max_bits)
+	len = stack_temp()->size;
+	max = stack_temp()->array[len -1];
+	count = 0;
+	while (stack_temp()->size > 0)
 	{
-		count_2 = -1;
-		while (++count_2 < max_num)
+		while (len > 0)
 		{
-			if (((stack_a()->array[0] >> count) & 1) != 1)
-				push_b(stack_a()->array[0]);
-			else
-				rotate_a();
+			if (stack_temp()->array[len -1] > max)
+				max = stack_temp()->array[len -1];
+			len--;
 		}
-		while (stack_b()->size > 0)
-			push_a();
+		while (stack_temp()->size > 0)
+		{
+			if (stack_temp()->array[stack_temp()->size -1] == max)
+			{
+				stack_temp2()->array[count] = stack_temp()->array[count];
+				stack_temp()->array[count] = stack_temp()->array[stack_temp()->size -1];
+				stack_temp()->array[stack_temp()->size -1] = stack_temp2()->array[count];
+			}
+			stack_temp()->size--;
+		}
+		len = stack_temp()->size;
+		stack_a()->array[len -1] = len;
+		len--;
+		stack_temp()->size--;
 	}
 }

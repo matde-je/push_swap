@@ -23,6 +23,7 @@ void	rotate_a(void)
 		stack_a()->size--;
 		count++;
 	}
+	write(1, "ra\n", 3);
 }
 
 /*	stack_a()->array[2] = stack_a()->array[0];

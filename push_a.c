@@ -24,4 +24,5 @@ void	push_a(void)
 		stack_a()->size++;
 		count++;
 	}
+	write(1, "pa\n", 3);
 }

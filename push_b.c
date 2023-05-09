@@ -17,4 +17,5 @@ void	push_b(int value)
 	stack_b()->array[stack_b()->size] = value;
 	stack_b()->size++;
 	stack_a()->size--;
+	write(1, "pb\n", 3);
 }
