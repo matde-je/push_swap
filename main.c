@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:42:23 by matde-je          #+#    #+#             */
-/*   Updated: 2023/04/27 18:18:09 by matde-je         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:03:31 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 		write(1, "Error\n", 6);
 	i = -1;
 	stack_temp()->size = 0;
-	while (++i != argc)
+	while (++i < argc - 1)
 	{
 		stack_temp()->array[i] = my_atoi(argv[i + 1]);
 		stack_temp()->size++;

@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:42:23 by matde-je          #+#    #+#             */
-/*   Updated: 2023/04/27 18:18:09 by matde-je         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:18:50 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void    index_(void)
 {
 	int	max;
 	int	len;
-	int count;
+	int	count;
 
 	len = stack_temp()->size;
 	max = stack_temp()->array[len -1];
@@ -34,8 +34,10 @@ void    index_(void)
 			if (stack_temp()->array[stack_temp()->size -1] == max)
 			{
 				stack_temp2()->array[count] = stack_temp()->array[count];
-				stack_temp()->array[count] = stack_temp()->array[stack_temp()->size -1];
-				stack_temp()->array[stack_temp()->size -1] = stack_temp2()->array[count];
+				stack_temp()->array[count]
+				=stack_temp()->array[stack_temp()->size -1];
+				stack_temp()->array[stack_temp()->size -1]
+				=stack_temp2()->array[count];
 			}
 			stack_temp()->size--;
 		}

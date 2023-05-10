@@ -6,7 +6,7 @@
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 12:42:23 by matde-je          #+#    #+#             */
-/*   Updated: 2023/04/27 18:18:09 by matde-je         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:47:37 by matde-je         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	radix(void)
 {
-	int		count;
-	int		count_2;
-    int		max_bits;
-	int		max_num;
+	int	count;
+	int	count_2;
+	int	max_bits;
+	int	max_num;
 
 	max_num = stack_a()->size;
 	max_bits = 0;
@@ -29,8 +29,8 @@ void	radix(void)
 		count_2 = -1;
 		while (++count_2 < max_num)
 		{
-			if (((stack_a()->array[0] >> count) & 1) != 1)
-				push_b(stack_a()->array[0]);
+			if (((stack_a()->array[stack_a()->size -1] >> count) & 1) != 1)
+				push_b(stack_a()->array[stack_a()->size -1]);
 			else
 				rotate_a();
 		}

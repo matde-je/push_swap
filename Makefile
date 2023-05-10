@@ -6,12 +6,11 @@
 #    By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/19 12:39:28 by matde-je          #+#    #+#              #
-#    Updated: 2023/04/19 12:39:29 by matde-je         ###   ########.fr        #
+#    Updated: 2023/05/10 13:38:55 by matde-je         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-
 SOURCES =	main.c				\
 			rotate_a.c			\
 			numbers_3.c			\
@@ -25,7 +24,7 @@ SOURCES =	main.c				\
 
 
 OBJECTS	=	$(SOURCES:.c=.o)
-CC	=	cc
+CC	=	cc -g
 #CFLAGS = -Wall -Wextra -Werror -g
 all:		$(NAME)
 
