@@ -23,6 +23,7 @@ void	push_a(void)
 		stack_b()->size--;
 		stack_a()->size++;
 		count++;
+		write(1, "pa\n", 3);
 	}
-	write(1, "pa\n", 3);
+	free(stack_b()->array);
 }

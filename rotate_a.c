@@ -25,7 +25,3 @@ void	rotate_a(void)
 	}
 	write(1, "ra\n", 3);
 }
-
-/*	stack_a()->array[2] = stack_a()->array[0];
-	while (stack_a()->size)
-		stack_a()->array[count] += 1;*/

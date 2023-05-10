@@ -22,7 +22,7 @@ typedef struct stack
 	int	size;
 }t_stack;
 
-int		my_atoi(char *str);
+int	my_atoi(char *str);
 void	push_b(int value);
 void	push_a(void);
 void	numbers_3(void);
@@ -31,7 +31,6 @@ void	rotate_a(void);
 t_stack	*stack_a(void);
 t_stack	*stack_b(void);
 t_stack	*stack_temp(void);
-t_stack	*stack_temp3(void);
 t_stack	*stack_temp2(void);
 void    index_(void);
 void	radix(void);

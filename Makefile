@@ -10,6 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
+
 SOURCES =	main.c				\
 			rotate_a.c			\
 			numbers_3.c			\
@@ -21,17 +23,15 @@ SOURCES =	main.c				\
 			index.c				\
 			radix.c
 
-NAME 	=	push_swap.a
+
 OBJECTS	=	$(SOURCES:.c=.o)
-GCC	=	gcc	-Wall -Wextra -Werror
-
-.c.o:
-	$(GCC) -c $< -o $(<:.c=.o)
-
+CC	=	cc
+#CFLAGS = -Wall -Wextra -Werror -g
 all:		$(NAME)
 
+
 $(NAME):	$(OBJECTS)
-			ar rcs $(NAME) $(OBJECTS)
+			$(CC) $(OBJECTS) -o $(NAME)
 
 clean:		
 			rm -f $(OBJECTS)

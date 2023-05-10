@@ -44,4 +44,6 @@ void    index_(void)
 		len--;
 		stack_temp()->size--;
 	}
+	free(stack_temp2()->array);
+	free(stack_temp()->array);
 }

@@ -16,11 +16,19 @@ int	main(int argc, char **argv)
 {
 	int	i;
 
+	stack_a()->array = malloc(sizeof(int) * argc);
+	stack_b()->array = malloc(sizeof(int) * argc);
+	stack_temp()->array = malloc(sizeof(int) * argc);
+	stack_temp2()->array = malloc(sizeof(int) * argc);
 	if (argc <= 1)
 		write(1, "Error\n", 6);
 	i = -1;
+	stack_temp()->size = 0;
 	while (++i != argc)
+	{
 		stack_temp()->array[i] = my_atoi(argv[i + 1]);
+		stack_temp()->size++;
+	}
 	index_();
 	if (stack_a()->size == 2 && stack_a()->array[0] > stack_a()->array[1])
 		rotate_a();
@@ -33,4 +41,6 @@ int	main(int argc, char **argv)
 	else
 		radix();
 	return (0);
+	free(stack_a()->array);
+	free(stack_b()->array);
 }

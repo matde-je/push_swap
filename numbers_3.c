@@ -14,24 +14,25 @@
 
 void	numbers_3(void)
 {
+	stack_temp()->size = 0;
 	if (stack_a()->array[1] > stack_a()->array[2]
 		&& stack_a()->array[2] > stack_a()->array[2])
 	{
-		stack_temp3()->array[2] = stack_a()->array[2];
+		stack_temp()->array[2] = stack_a()->array[2];
 		stack_a()->array[2] = stack_a()->array[0];
-		stack_a()->array[0] = stack_temp3()->array[2];
+		stack_a()->array[0] = stack_temp()->array[2];
 	}
 	if (stack_a()->array[1] < stack_a()->array[0]
 		&& stack_a()->array[1] < stack_a()->array[2])
 	{
-		stack_temp3()->array[1] = stack_a()->array[1];
+		stack_temp()->array[1] = stack_a()->array[1];
 		stack_a()->array[1] = stack_a()->array[2];
-		stack_a()->array[2] = stack_temp3()->array[1];
+		stack_a()->array[2] = stack_temp()->array[1];
 	}
 	else if (stack_a()->array[1] > stack_a()->array[0])
 	{
-		stack_temp3()->array[1] = stack_a()->array[1];
+		stack_temp()->array[1] = stack_a()->array[1];
 		stack_a()->array[1] = stack_a()->array[0];
-		stack_a()->array[0] = stack_temp3()->array[1];
+		stack_a()->array[0] = stack_temp()->array[1];
 	}
 }
