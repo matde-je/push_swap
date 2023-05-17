@@ -12,14 +12,25 @@
 
 #include "push_swap.h"
 
+void	initializing(int argc)
+{
+	stack_a()->array = malloc(sizeof(int) * argc);
+	stack_b()->array = malloc(sizeof(int) * argc);
+	stack_temp()->array = malloc(sizeof(int) * argc);
+}
+
+void	freeing()
+{
+	free(stack_a()->array);
+	free(stack_b()->array);
+	free(stack_temp()->array);
+}
+
 int	main(int argc, char **argv)
 {
 	int	i;
 
-	stack_a()->array = malloc(sizeof(int) * argc);
-	stack_b()->array = malloc(sizeof(int) * argc);
-	stack_temp()->array = malloc(sizeof(int) * argc);
-	stack_temp2()->array = malloc(sizeof(int) * argc);
+	initializing(argc);
 	if (argc <= 1)
 		write(1, "Error\n", 6);
 	i = -1;
@@ -29,7 +40,6 @@ int	main(int argc, char **argv)
 		stack_temp()->array[i] = my_atoi(argv[i + 1]);
 		stack_temp()->size++;
 	}
-	index_();
 	if (stack_a()->size == 2 && stack_a()->array[0] > stack_a()->array[1])
 		rotate_a();
 	else if (stack_a()->size == 2)
@@ -39,8 +49,9 @@ int	main(int argc, char **argv)
 	if (stack_a()->size == 5)
 		numbers_5();
 	else
+	{
+		get_max();
 		radix();
-	return (0);
-	free(stack_a()->array);
-	free(stack_b()->array);
+	}
+	freeing();
 }

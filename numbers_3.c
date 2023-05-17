@@ -14,25 +14,19 @@
 
 void	numbers_3(void)
 {
-	stack_temp()->size = 0;
 	if (stack_a()->array[1] > stack_a()->array[2]
-		&& stack_a()->array[2] > stack_a()->array[2])
+		&& stack_a()->array[0] > stack_a()->array[2])
 	{
-		stack_temp()->array[2] = stack_a()->array[2];
-		stack_a()->array[2] = stack_a()->array[0];
-		stack_a()->array[0] = stack_temp()->array[2];
+		rotate_a();
+		rotate_a();
 	}
 	if (stack_a()->array[1] < stack_a()->array[0]
 		&& stack_a()->array[1] < stack_a()->array[2])
-	{
-		stack_temp()->array[1] = stack_a()->array[1];
-		stack_a()->array[1] = stack_a()->array[2];
-		stack_a()->array[2] = stack_temp()->array[1];
-	}
+		rotate_a();
 	else if (stack_a()->array[1] > stack_a()->array[0])
 	{
-		stack_temp()->array[1] = stack_a()->array[1];
-		stack_a()->array[1] = stack_a()->array[0];
-		stack_a()->array[0] = stack_temp()->array[1];
+		push_b();
+		rotate_a();
+		push_a();
 	}
 }

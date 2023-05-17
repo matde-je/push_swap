@@ -32,10 +32,3 @@ t_stack	*stack_temp(void)
 
 	return (&temp);
 }
-
-t_stack	*stack_temp2(void)
-{
-	static t_stack	temp2;
-
-	return (&temp2);
-}

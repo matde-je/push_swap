@@ -30,7 +30,7 @@ void	radix(void)
 		while (++count_2 < max_num)
 		{
 			if (((stack_a()->array[stack_a()->size -1] >> count) & 1) != 1)
-				push_b(stack_a()->array[stack_a()->size -1]);
+				push_b();
 			else
 				rotate_a();
 		}

@@ -14,14 +14,14 @@
 
 void	rotate_a(void)
 {
-	int	count;
-
-	count = 0;
+	stack_temp()->array[0] = stack_a()->array[stack_a()->size - 1];
 	while (stack_a()->size > 0)
 	{
-		stack_a()->array[stack_a()->size - 1] = stack_a()->array[count];
+		if (stack_a()->size > 1)
+			stack_a()->array[stack_a()->size - 1] = stack_a()->array[stack_a()->size - 2];
+		else
+			stack_a()->array[0] = stack_temp()->array[0];
 		stack_a()->size--;
-		count++;
 	}
 	write(1, "ra\n", 3);
 }

@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	push_b(int value)
+void	push_b()
 {
-	stack_b()->array[stack_b()->size] = value;
+	stack_b()->array[stack_b()->size] = stack_a()->array[stack_a()->size -1];
 	stack_b()->size++;
 	stack_a()->size--;
 	write(1, "pb\n", 3);
