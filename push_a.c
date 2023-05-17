@@ -14,16 +14,9 @@
 
 void	push_a(void)
 {
-	int	count;
-
-	count = 0;
-	while (stack_b()->size > 0)
-	{
-		stack_a()->array[stack_a()->size + 1] = stack_b()->array[count];
-		stack_b()->size--;
-		stack_a()->size++;
-		count++;
-		write(1, "pa\n", 3);
-	}
-	free(stack_b()->array);
+	stack_a()->array[stack_a()->size + 1] = stack_b()->array[stack_b()->size -1];
+	stack_b()->array[stack_b()->size -1] = '\0';
+	stack_b()->size--;
+	stack_a()->size++;
+	write(1, "pa\n", 3);
 }

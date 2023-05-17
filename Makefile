@@ -23,8 +23,8 @@ SOURCES =	main.c				\
 			radix.c
 
 OBJECTS	=	$(SOURCES:.c=.o)
-CC	=	cc
-CFLAGS = -Wall -Wextra -Werror
+CC	=	cc -g
+#CFLAGS = -Wall -Wextra -Werror
 all:		$(NAME)
 
 $(NAME):	$(OBJECTS)

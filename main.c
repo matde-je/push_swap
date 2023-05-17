@@ -17,12 +17,15 @@ void	initializing(int argc)
 	stack_a()->array = malloc(sizeof(int) * argc);
 	stack_b()->array = malloc(sizeof(int) * argc);
 	stack_temp()->array = malloc(sizeof(int) * argc);
+	stack_a()->size = 0;
+	stack_b()->size = 0;
+	stack_temp()->size = 0;
 }
 
 void	freeing()
 {
 	free(stack_a()->array);
-	free(stack_b()->array);
+	//free(stack_b()->array);
 	free(stack_temp()->array);
 }
 
@@ -34,7 +37,6 @@ int	main(int argc, char **argv)
 	if (argc <= 1)
 		write(1, "Error\n", 6);
 	i = -1;
-	stack_temp()->size = 0;
 	while (++i < argc - 1)
 	{
 		stack_temp()->array[i] = my_atoi(argv[i + 1]);
@@ -44,9 +46,9 @@ int	main(int argc, char **argv)
 		rotate_a();
 	else if (stack_a()->size == 2)
 		write(1, "Already sorted\n", 15);
-	if (stack_a()->size == 3)
+	else if (stack_a()->size == 3)
 		numbers_3();
-	if (stack_a()->size == 5)
+	else if (stack_a()->size == 5)
 		numbers_5();
 	else
 	{

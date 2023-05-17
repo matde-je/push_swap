@@ -16,23 +16,30 @@ void    get_max(void)
 {
 	int	max;
 	int	len;
-	int	len2;
 
 	max = stack_temp()->array[stack_temp()->size -1];
-	len = stack_temp()->size +1;
+	len = stack_temp()->size;
 	while (--len > 0)
 	{
-		if (stack_temp()->array[len -1] > max)
-		{
-			max = stack_temp()->array[len -1];
-			len2 = len;
-		}
+		if (stack_temp()->array[len] > max)
+			max = stack_temp()->array[len];
 	}
-	stack_a()->array[len2 -1] = stack_temp()->size;
-	while (++len2 < stack_temp()->size + 1)
+	len = stack_temp()->size;
+	while (--len >= 0)
 	{
-		stack_temp()->array[len2 -2] = stack_temp()->array[len2 -1];
-		stack_temp()->size--;
+		if (stack_temp()->array[len] == max)
+			break;
 	}
-	get_max();  
+	stack_a()->array[len] = stack_temp()->size;
+	stack_a()->size += 1;
+	while (++len < stack_temp()->size)
+		stack_temp()->array[len -1] = stack_temp()->array[len];
+	stack_temp()->size--;
+	if (stack_temp()->size == 1)
+	{
+		stack_a()->array[len] = stack_temp()->size;
+		stack_a()->size += 1;
+	}
+	if (stack_temp()->size > 1)
+		get_max();
 }
