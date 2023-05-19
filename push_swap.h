@@ -31,7 +31,7 @@ void	rotate_a(void);
 t_stack	*stack_a(void);
 t_stack	*stack_b(void);
 t_stack	*stack_temp(void);
-void    get_max(void);
+void    get_next_max(void);
 void	radix(void);
 
 #endif

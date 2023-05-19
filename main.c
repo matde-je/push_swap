@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 		numbers_5();
 	else
 	{
-		get_max();
+		get_next_max();
 		radix();
 	}
 	freeing();
