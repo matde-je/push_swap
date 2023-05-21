@@ -42,6 +42,12 @@ int	get_min(void)
 	return (min);
 }
 
+void	get_next_max_help(int len)
+{
+	stack_a()->array[len] = stack_temp()->size;
+	stack_a()->size++;
+}
+
 void	get_next_max(int min, int max, int len, int len2)
 {
 	int	tmp2;
@@ -66,8 +72,7 @@ void	get_next_max(int min, int max, int len, int len2)
 			if (stack_temp()->array[len] == tmp)
 				break ;
 		}
-		stack_a()->array[len] = stack_temp()->size;
-		stack_a()->size++;
+		get_next_max_help(len);
 		len = len2;
 	}
 }
