@@ -67,6 +67,7 @@ void	get_next_max(int min, int max, int len, int len2)
 				break ;
 		}
 		stack_a()->array[len] = stack_temp()->size;
+		stack_a()->size++;
 		len = len2;
 	}
 }
@@ -95,6 +96,7 @@ void	index_(void)
 			break ;
 	}
 	stack_a()->array[len] = 1;
+	stack_a()->size = 2;
 	len = stack_temp()->size;
 	get_next_max(min, max, len, len2);
 }
