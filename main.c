@@ -22,10 +22,9 @@ void	initializing(int argc)
 	stack_temp()->size = 0;
 }
 
-void	freeing()
+void	freeing(void)
 {
 	free(stack_a()->array);
-	//free(stack_b()->array);
 	free(stack_temp()->array);
 }
 
@@ -52,7 +51,7 @@ int	main(int argc, char **argv)
 		numbers_5();
 	else
 	{
-		get_next_max();
+		index_();
 		radix();
 	}
 	freeing();

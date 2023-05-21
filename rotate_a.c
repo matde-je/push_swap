@@ -18,7 +18,10 @@ void	rotate_a(void)
 	while (stack_a()->size > 0)
 	{
 		if (stack_a()->size > 1)
-			stack_a()->array[stack_a()->size - 1] = stack_a()->array[stack_a()->size - 2];
+		{
+			stack_a()->array[stack_a()->size - 1]
+			= stack_a()->array[stack_a()->size - 2];
+		}
 		else
 			stack_a()->array[0] = stack_temp()->array[0];
 		stack_a()->size--;

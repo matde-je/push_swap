@@ -14,7 +14,8 @@
 
 void	push_a(void)
 {
-	stack_a()->array[stack_a()->size + 1] = stack_b()->array[stack_b()->size -1];
+	stack_a()->array[stack_a()->size + 1]
+	= stack_b()->array[stack_b()->size -1];
 	stack_b()->array[stack_b()->size -1] = '\0';
 	stack_b()->size--;
 	stack_a()->size++;
