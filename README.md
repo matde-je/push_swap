@@ -1,2 +1,2 @@
 # push_swap
-Sorting numbers with Radix Algorithm and Static Stacks.
+Sorting numbers using Radix Algorithm and static stacks.
