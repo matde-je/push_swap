@@ -22,61 +22,17 @@ void	initializing(int argc)
 	stack_temp()->size = 0;
 }
 
-void	freeing(void)
-{
-	free(stack_a()->array);
-	free(stack_temp()->array);
-}
-
-void	indexation(void)
-{
-	int	count;
-
-	count = 0;
-	while (stack_temp()->size > 0)
-	{
-		stack_a()->array[count] = stack_temp()->array[count];
-		count++;
-	}
-}
-
-void	size_2(void)
-{
-	if (stack_temp()->size == 2
-		&& stack_temp()->array[0] > stack_temp()->array[1])
-	{
-		indexation();
-		rotate_a();
-	}
-	else
-		write(1, "Already sorted\n", 15);
-}
-
 int	main(int argc, char **argv)
 {
-	int	i;
-
 	initializing(argc);
-	if (argc <= 1)
-		write(1, "Error\n", 6);
-	i = -1;
-	while (++i < argc - 1)
-	{
-		stack_temp()->array[i] = my_atoi(argv[i + 1]);
-		stack_temp()->size++;
-	}
-	if (stack_temp()->size == 5 || stack_temp()->size == 3)
-		indexation();
-	else if (stack_temp()->size == 2)
-		size_2();
-	else if (stack_temp()->size == 3)
-		numbers_3();
-	else if (stack_temp()->size == 5)
-		numbers_5();
-	else
-	{
-		index_();
-		radix();
-	}
-	freeing();
+	if (check_args(argc, argv) == 1)
+		return (0);
+	atoi_help(argc, argv);
+	if (argv_sorted() == 1)
+		return (0);
+	check_size();
+	free(stack_a()->array);
+	free(stack_temp()->array);
+	stack_a()->size = 0;
+	stack_temp()->size = 0;
 }

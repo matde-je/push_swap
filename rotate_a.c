@@ -14,17 +14,40 @@
 
 void	rotate_a(void)
 {
-	stack_temp()->array[0] = stack_a()->array[stack_a()->size - 1];
-	while (stack_a()->size > 0)
+	int	len;
+
+	len = stack_a()->size;
+	stack_temp()->array[0] = stack_a()->array[len - 1];
+	while (--len >= 0)
 	{
-		if (stack_a()->size > 1)
-		{
-			stack_a()->array[stack_a()->size - 1]
-			= stack_a()->array[stack_a()->size - 2];
-		}
+		if (len > 0)
+			stack_a()->array[len] = stack_a()->array[len - 1];
 		else
 			stack_a()->array[0] = stack_temp()->array[0];
-		stack_a()->size--;
 	}
 	write(1, "ra\n", 3);
+}
+
+void	r_rotate_a(void)
+{
+	int	temp;
+	int	len;
+
+	temp = stack_a()->array[stack_a()->size - 1];
+	len = stack_a()->size - 1;
+	while (len > 0)
+	{
+		stack_a()->array[len] = stack_a()->array[len - 1];
+		len--;
+	}
+	stack_a()->array[0] = temp;
+}
+
+void	swap_a(void)
+{
+	int	temp;
+
+	temp = stack_a()->array[0];
+	stack_a()->array[0] = stack_a()->array[1];
+	stack_a()->array[1] = temp;
 }

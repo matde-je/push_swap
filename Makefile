@@ -13,18 +13,18 @@
 NAME = push_swap
 SOURCES =	main.c				\
 			rotate_a.c			\
-			numbers_3.c			\
-			numbers_5.c			\
+			sizes.c				\
 			push_a.c			\
 			push_b.c			\
 			my_atoi.c			\
 			static_stack.c		\
 			index.c				\
+			checkers.c			\
 			radix.c
 
 OBJECTS	=	$(SOURCES:.c=.o)
-CC	=	cc -g
-#CFLAGS = -Wall -Wextra -Werror
+CC	=	cc
+CFLAGS = -Wall -Wextra -Werror
 all:		$(NAME)
 
 $(NAME):	$(OBJECTS)

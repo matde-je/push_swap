@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
 int	my_atoi(char *str)
 {
 	int	i;
@@ -34,4 +36,16 @@ int	my_atoi(char *str)
 		i++;
 	}
 	return (res * sign);
+}
+
+void	atoi_help(int argc, char **argv)
+{
+	int	i;
+
+	i = -1;
+	while (++i < argc - 1)
+	{
+		stack_temp()->array[i] = my_atoi(argv[i + 1]);
+		stack_temp()->size++;
+	}
 }

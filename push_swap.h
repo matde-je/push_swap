@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct stack
 {
@@ -33,5 +34,12 @@ t_stack	*stack_b(void);
 t_stack	*stack_temp(void);
 void	index_(void);
 void	radix(void);
+void	atoi_help(int argc, char **argv);
+void	check_size(void);
+int		check_args(int argc, char **argv);
+void	indexation(void);
+int		argv_sorted(void);
+void	swap_a(void);
+void	r_rotate_a(void);
 
 #endif
