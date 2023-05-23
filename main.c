@@ -31,6 +31,7 @@ int	main(int argc, char **argv)
 	if (argv_sorted() == 1)
 		return (0);
 	check_size();
+	print_();
 	free(stack_a()->array);
 	free(stack_temp()->array);
 	stack_a()->size = 0;

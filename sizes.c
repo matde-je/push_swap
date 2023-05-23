@@ -12,20 +12,6 @@
 
 #include "push_swap.h"
 
-void	indexation(void)
-{
-	int	count;
-
-	count = 0;
-	while (stack_temp()->size > 0)
-	{
-		stack_a()->size++;
-		stack_a()->array[count] = stack_temp()->array[count];
-		count++;
-		stack_temp()->size--;
-	}
-}
-
 void	numbers_3_help(void)
 {
 	if (stack_a()->array[0] <= stack_a()->array[1]
@@ -39,6 +25,15 @@ void	numbers_3_help(void)
 		&& stack_a()->array[1] >= stack_a()->array[2]
 		&& stack_a()->array[0] >= stack_a()->array[2])
 		r_rotate_a();
+	if (stack_a()->array[0] <= stack_a()->array[1]
+		&& stack_a()->array[1] <= stack_a()->array[2])
+	{
+		push_b();
+		rotate_a();
+		push_a();
+		rotate_a();
+	}
+
 }
 
 void	numbers_3(void)
@@ -64,14 +59,21 @@ void	numbers_3(void)
 
 void	numbers_5(void)
 {
-	push_b();
-	push_b();
-	numbers_3();
-	while (stack_a()->size > 0)
+	int	count;
+
+	count = 0;
+	while (count <= stack_a()->size)
 	{
-		if (stack_b()->array[stack_a()->size -1]
-			< stack_a()->array[stack_a()->size -1])
-			push_a();
-		stack_a()->size--;
+		if (stack_a()->array[0] == 1 || stack_a()->array[0] == 2)
+			push_b();
+		else
+			rotate_a();
+		count++;
 	}
+	if (stack_a()->array[0] == 1)
+		swap_b();
+	numbers_3();
+	push_a();
+	push_a();
+	print_();
 }

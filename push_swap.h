@@ -40,6 +40,9 @@ int		check_args(int argc, char **argv);
 void	indexation(void);
 int		argv_sorted(void);
 void	swap_a(void);
+void	swap_b(void);
 void	r_rotate_a(void);
+void	indexation(void);
+void	print_(void);
 
 #endif

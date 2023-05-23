@@ -42,9 +42,14 @@ int	get_min(void)
 	return (min);
 }
 
-void	get_next_max_help(int len)
+void	get_next_max_help(int len, int len3, int tmp)
 {
-	stack_a()->array[len] = stack_temp()->size;
+	while (--len >= 0)
+	{
+		if (stack_temp()->array[len] == tmp)
+			break ;
+	}
+	stack_a()->array[len] = len3;
 	stack_a()->size++;
 }
 
@@ -52,9 +57,11 @@ void	get_next_max(int min, int max, int len, int len2)
 {
 	int	tmp2;
 	int	tmp;
+	int	len3;
 
 	tmp2 = max;
-	while (--stack_temp()->size > 1)
+	len3 = stack_temp()->size;
+	while (--len3 > 1)
 	{
 		tmp = min;
 		while (--len >= 0)
@@ -67,12 +74,7 @@ void	get_next_max(int min, int max, int len, int len2)
 		}
 		tmp2 = tmp;
 		len = len2;
-		while (--len >= 0)
-		{
-			if (stack_temp()->array[len] == tmp)
-				break ;
-		}
-		get_next_max_help(len);
+		get_next_max_help(len, len3, tmp);
 		len = len2;
 	}
 }
