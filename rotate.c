@@ -26,7 +26,6 @@ void	rotate_a(void)
 	}
 	stack_a()->array[counter - 1] = temp;
 	write(1, "ra\n", 3);
-	print_();
 }
 
 void	r_rotate_a(void)
@@ -42,4 +41,5 @@ void	r_rotate_a(void)
 		len--;
 	}
 	stack_a()->array[0] = temp;
+	write(1, "rra\n", 4);
 }

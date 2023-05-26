@@ -44,5 +44,6 @@ void	swap_b(void);
 void	r_rotate_a(void);
 void	indexation(void);
 void	print_(void);
+void	print_t(void);
 
 #endif

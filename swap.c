@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_b.c                                           :+:      :+:    :+:   */
+/*   swap.c			  	                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matde-je <matde-je@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -19,6 +19,7 @@ void	swap_a(void)
 	temp = stack_a()->array[0];
 	stack_a()->array[0] = stack_a()->array[1];
 	stack_a()->array[1] = temp;
+	write(1, "sa\n", 3);
 }
 
 void	swap_b(void)
@@ -28,5 +29,5 @@ void	swap_b(void)
 	temp = stack_b()->array[0];
 	stack_b()->array[0] = stack_b()->array[1];
 	stack_b()->array[1] = temp;
+	write(1, "sb\n", 3);
 }
-

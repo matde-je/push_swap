@@ -16,16 +16,16 @@ SOURCES =	main.c				\
 			sizes.c				\
 			push.c				\
 			swap.c				\
-			my_atoi.c			\
+			atoi.c				\
 			static_stack.c		\
 			index.c				\
 			checkers.c			\
-			index2.c			\
+			index_2.c			\
 			radix.c
 
 OBJECTS	=	$(SOURCES:.c=.o)
-CC	=	cc -g
-#CFLAGS = -Wall -Wextra -Werror
+CC	=	cc
+CFLAGS = -Wall -Wextra -Werror
 all:		$(NAME)
 
 $(NAME):	$(OBJECTS)

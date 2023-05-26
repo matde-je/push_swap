@@ -25,20 +25,11 @@ void	numbers_3_help(void)
 		&& stack_a()->array[1] >= stack_a()->array[2]
 		&& stack_a()->array[0] >= stack_a()->array[2])
 		r_rotate_a();
-	if (stack_a()->array[0] <= stack_a()->array[1]
-		&& stack_a()->array[1] <= stack_a()->array[2])
-	{
-		push_b();
-		rotate_a();
-		push_a();
-		rotate_a();
-	}
-
 }
 
 void	numbers_3(void)
 {
-	if (stack_a()->array[0] >= stack_a()->array[1] 
+	if (stack_a()->array[0] >= stack_a()->array[1]
 		&& stack_a()->array[1] <= stack_a()->array[2]
 		&& stack_a()->array[0] <= stack_a()->array[2])
 		swap_a();
@@ -70,10 +61,13 @@ void	numbers_5(void)
 			rotate_a();
 		count++;
 	}
-	if (stack_a()->array[0] == 1)
+	if (stack_b()->array[0] == 1)
 		swap_b();
 	numbers_3();
-	push_a();
-	push_a();
+	if (stack_b()->size > 0)
+	{
+		push_a();
+		push_a();
+	}
 	print_();
 }
