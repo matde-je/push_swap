@@ -69,5 +69,4 @@ void	numbers_5(void)
 		push_a();
 		push_a();
 	}
-	print_();
 }

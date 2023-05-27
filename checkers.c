@@ -23,8 +23,12 @@ int	argv_(int argc, char **argv)
 	{
 		while (argv[e][i] != '\0')
 		{
-			if ((argv[1][i] > 57 || argv[1][i] < 48)
-			&& argv[1][i] != 45 && (argv[1][i + 1] > 57 || argv[1][i +1] < 48))
+			if ((argv[1][i] > 57 || argv[1][i] < 48) && argv[1][i] != 45)
+			{
+				write(1, "Error\n", 6);
+				return (1);
+			}
+			if (argv[1][i] == 45 && (argv[1][i + 1] > 57 || argv[1][i +1] < 48))
 			{
 				write(1, "Error\n", 6);
 				return (1);
@@ -47,10 +51,7 @@ int	check_args(int argc, char **argv)
 	if (argv_(argc, argv) == 1)
 		return (1);
 	if (argc == 2)
-	{
-		write(1, "Already sorted\n", 15);
 		return (1);
-	}
 	return (0);
 }
 
@@ -62,28 +63,21 @@ int	argv_sorted(void)
 	while (--len >= 0)
 	{
 		if (stack_temp()->array[len] < stack_temp()->array[len - 1])
-		{
-			printf("sort %i\n", stack_temp()->array[len]);
 			return (0);
-		}
 	}
-	write(1, "Already sorted\n", 15);
 	return (1);
 }
 
 void	check_size(void)
 {
-	if (stack_temp()->size <= 5 && stack_temp()->size != 4)
-		index_();
 	if (stack_a()->size == 2)
 		rotate_a();
-	else if (stack_a()->size == 5)
+	else
+		index_();
+	if (stack_a()->size == 5)
 		numbers_5();
 	else if (stack_a()->size == 3)
 		numbers_3();
 	else
-	{
-		index_();
 		radix();
-	}
 }

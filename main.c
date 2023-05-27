@@ -22,6 +22,20 @@ void	initializing(int argc)
 	stack_temp()->size = 0;
 }
 
+// void	print_(void)
+// {
+// 	int	i;
+// 	int	len;
+
+// 	i = 0;
+// 	len = stack_a()->size;
+// 	while (--len > -1)
+// 	{
+// 		printf("%i\n", stack_a()->array[i]);
+// 		i++;
+// 	}
+// }
+
 int	main(int argc, char **argv)
 {
 	initializing(argc);
@@ -31,7 +45,6 @@ int	main(int argc, char **argv)
 	if (argv_sorted() == 1)
 		return (0);
 	check_size();
-	print_();
 	free(stack_a()->array);
 	free(stack_temp()->array);
 	stack_a()->size = 0;
