@@ -26,20 +26,6 @@ void	print_(void)
 	}
 }
 
-void	print_t(void)
-{
-	int	i;
-	int	len;
-
-	i = 0;
-	len = stack_temp()->size;
-	while (--len > -1)
-	{
-		printf("%i\n", stack_temp()->array[i]);
-		i++;
-	}
-}
-
 void	indexation(void)
 {
 	int	count;

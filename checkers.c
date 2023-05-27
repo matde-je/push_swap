@@ -23,7 +23,8 @@ int	argv_(int argc, char **argv)
 	{
 		while (argv[e][i] != '\0')
 		{
-			if ((argv[1][i] > 57 || argv[1][i] < 48) && argv[1][i] != 45)
+			if ((argv[1][i] > 57 || argv[1][i] < 48)
+			&& argv[1][i] != 45 && (argv[1][i + 1] > 57 || argv[1][i +1] < 48))
 			{
 				write(1, "Error\n", 6);
 				return (1);
