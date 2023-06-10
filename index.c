@@ -79,7 +79,7 @@ void	get_next_max(int min, int max, int len, int len2)
 	}
 }
 
-void	index_(void)
+void	indexation(void)
 {
 	int	min;
 	int	max;

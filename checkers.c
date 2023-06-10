@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	argv_(int argc, char **argv)
+int	argv_checker(int argc, char **argv)
 {
 	int	e;
 	int	i;
@@ -23,12 +23,12 @@ int	argv_(int argc, char **argv)
 	{
 		while (argv[e][i] != '\0')
 		{
-			if ((argv[1][i] > 57 || argv[1][i] < 48) && argv[1][i] != 45)
+			if ((argv[e][i] > 57 || argv[e][i] < 48) && argv[e][i] != 45)
 			{
 				write(1, "Error\n", 6);
 				return (1);
 			}
-			if (argv[1][i] == 45 && (argv[1][i + 1] > 57 || argv[1][i +1] < 48))
+			if (argv[e][i] == 45 && (argv[e][i + 1] > 57 || argv[e][i +1] < 48))
 			{
 				write(1, "Error\n", 6);
 				return (1);
@@ -41,14 +41,57 @@ int	argv_(int argc, char **argv)
 	return (0);
 }
 
+int	duplicates_pt2(char **argv, int e, int i, int t)
+{
+	int	a;
+
+	a = 0;
+	while (argv[e][i] != '\0' && argv[e][i] == argv[e + t][i])
+	{
+		i++;
+		if (argv[e][i] != argv[e + t][i])
+		{
+			a = 1;
+			break ;
+		}
+		else
+			a = 2;
+	}
+	return (a);
+}
+
+int	duplicates(int argc, char **argv)
+{
+	int	e;
+	int	i;
+	int	t;
+	int	a;
+
+	e = 1;
+	while (e < argc)
+	{
+		t = 1;
+		while (t < argc - e)
+		{
+			i = 0;
+			a = duplicates_pt2(argv, e, i, t);
+			if (a == 2)
+			{
+				write(1, "Error\n", 6);
+				return (1);
+			}
+			t++;
+		}
+		e++;
+	}		
+	return (0);
+}
+
 int	check_args(int argc, char **argv)
 {
-	if (argc <= 1)
-	{
-		write(1, "Error\n", 6);
+	if (argc <= 2)
 		return (1);
-	}
-	if (argv_(argc, argv) == 1)
+	if (argv_checker(argc, argv) == 1)
 		return (1);
 	if (argc == 2)
 		return (1);
@@ -66,18 +109,4 @@ int	argv_sorted(void)
 			return (0);
 	}
 	return (1);
-}
-
-void	check_size(void)
-{
-	if (stack_a()->size == 2)
-		rotate_a();
-	else
-		index_();
-	if (stack_a()->size == 5)
-		numbers_5();
-	else if (stack_a()->size == 3)
-		numbers_3();
-	else
-		radix();
 }

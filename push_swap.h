@@ -32,7 +32,7 @@ void	rotate_a(void);
 t_stack	*stack_a(void);
 t_stack	*stack_b(void);
 t_stack	*stack_temp(void);
-void	index_(void);
+void	indexation(void);
 void	radix(void);
 void	atoi_help(int argc, char **argv);
 void	check_size(void);
@@ -41,5 +41,6 @@ int		argv_sorted(void);
 void	swap_a(void);
 void	swap_b(void);
 void	r_rotate_a(void);
+int		duplicates(int argc, char **argv);
 
 #endif

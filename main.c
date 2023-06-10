@@ -22,19 +22,13 @@ void	initializing(int argc)
 	stack_temp()->size = 0;
 }
 
-// void	print_(void)
-// {
-// 	int	i;
-// 	int	len;
-
-// 	i = 0;
-// 	len = stack_a()->size;
-// 	while (--len > -1)
-// 	{
-// 		printf("%i\n", stack_a()->array[i]);
-// 		i++;
-// 	}
-// }
+void	freeing(void)
+{
+	free(stack_a()->array);
+	free(stack_temp()->array);
+	stack_a()->size = 0;
+	stack_temp()->size = 0;
+}
 
 int	main(int argc, char **argv)
 {
@@ -42,11 +36,15 @@ int	main(int argc, char **argv)
 	if (check_args(argc, argv) == 1)
 		return (0);
 	atoi_help(argc, argv);
-	if (argv_sorted() == 1)
+	if (argv_sorted() == 1 || duplicates(argc, argv) == 1)
 		return (0);
+	indexation();
 	check_size();
-	free(stack_a()->array);
-	free(stack_temp()->array);
-	stack_a()->size = 0;
-	stack_temp()->size = 0;
+	int i = 0;
+	while (stack_a()->array[i])
+	{
+		printf ("%i\n", stack_a()->array[i]);
+		i++;
+	}
+	freeing();
 }

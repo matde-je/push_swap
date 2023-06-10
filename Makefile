@@ -13,7 +13,7 @@
 NAME = push_swap
 SOURCES =	main.c				\
 			rotate.c			\
-			sizes.c				\
+			sort_by_size.c		\
 			push.c				\
 			swap.c				\
 			atoi.c				\
