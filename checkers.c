@@ -76,10 +76,7 @@ int	duplicates(int argc, char **argv)
 			i = 0;
 			a = duplicates_pt2(argv, e, i, t);
 			if (a == 2)
-			{
-				write(1, "Error\n", 6);
 				return (1);
-			}
 			t++;
 		}
 		e++;
